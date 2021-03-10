@@ -71,6 +71,7 @@ fn main() {
     let part2_valid_count = passports
         .iter()
         .filter(|&passport| {
+            // TODO: I believe passing regex as arguments is not efficient. Maybe use lazy_static instead?
             is_valid_byr(passport, &valid_byr_re)
                 && is_valid_iyr(passport, &valid_iyr_re)
                 && is_valid_eyr(passport, &valid_eyr_re)
