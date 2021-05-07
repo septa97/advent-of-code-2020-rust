@@ -35,8 +35,7 @@ fn main() {
 
     let part1: usize = groups
         .iter()
-        .map(|group| {
-            let Group(answers) = group;
+        .map(|Group(answers)| {
             let accumulated = answers.iter().fold(vec![false; CHAR_SET_SIZE], |acc, x| {
                 acc.iter().zip(x.iter()).map(|(&a, &b)| a || b).collect()
             });
@@ -47,8 +46,7 @@ fn main() {
 
     let part2: usize = groups
         .iter()
-        .map(|group| {
-            let Group(answers) = group;
+        .map(|Group(answers)| {
             let accumulated = answers.iter().fold(vec![true; CHAR_SET_SIZE], |acc, x| {
                 acc.iter().zip(x.iter()).map(|(&a, &b)| a && b).collect()
             });
